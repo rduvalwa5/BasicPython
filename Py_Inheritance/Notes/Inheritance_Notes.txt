@@ -1,0 +1,142 @@
+Notes on Extending and Inheritance
+
+
+http://www.dummies.com/how-to/content/how-to-extend-classes-to-make-new-classes-in-pytho.html
+http://www.python-course.eu/python3_inheritance.php
+http://www.python-course.eu/python3_multiple_inheritance.php
+
+
+Inheritance:
+	1. object-oriented programming language
+	 	a) Python supports inheritance
+	 	b) supports multiple inheritance
+		c) classes inherit from other classes
+			- inherit attributes
+			- behaviour methods from another class
+			- called the superclass
+		d) class which inherits from a superclass is called a subclass
+			- also called heir class or child class
+		e) Superclasses are sometimes called ancestors as well
+			- exists a hierarchy relationship between classes
+		f) syntax for a subclass definition looks like this
+		
+			class DerivedClassName(BaseClassName):
+    				pass
+Example:
+    				
+class Person:
+
+    def __init__(self, first, last):
+        self.firstname = first
+        self.lastname = last
+
+    def Name(self):
+        return self.firstname + " " + self.lastname
+
+class Employee(Person):
+
+    def __init__(self, first, last, staffnum):
+        Person.__init__(self,first, last)
+        self.staffnumber = staffnum
+
+    def GetEmployee(self):
+        return self.Name() + ", " +  self.staffnumber
+
+x = Person("Marge", "Simpson")
+y = Employee("Homer", "Simpson", "1007")
+
+print(x.Name())
+print(y.GetEmployee())
+----------------------------
+
+	1)  __init__ method of our Employee class explicitly invokes the __init__method of the Person class
+		a. could have used super instead
+			- super().__init__(first, last) is automatically replaced by a call to the superclasses method
+			- in this case __init__:
+    			def __init__(self, first, last, staffnum):
+        					super().__init__(first, last)
+        					self.staffnumber = staffnum
+
+	2) note that used super()) without arguments
+	   This is only possible in Python3. 
+	   We could have written "super(Employee, self).__init__(first, last, age)" 
+	   which still works in Python3 and is compatible with Python2. 
+
+----------------------------
+Multiple Inheritance
+----------------------------
+
+http://www.python-course.eu/python3_multiple_inheritance.php
+
+Multiple inheritance is a feature in which a class can inherit attributes and methods from more than one parent parent class.
+ -critics 
+ 	multiple inheritance 
+ 		- a high level of complexity and ambiguity
+  -"The Diamand Problem or the ,,deadly diamond of death"
+	Diamond Problem The "diamond problem" (sometimes referred to as the "deadly diamond of death") 
+	is the generally used term for an ambiguity that arises when two classes B and C inherit 
+	from a superclass A, and another class D inherits from both B and C. 
+	If there is a method "m" in A that B or C (or even both of them) )has overridden, 
+	and furthermore, if does not override this method, 
+	then the question is which version of the method does D inherit? 
+	It could be the one from A, B or C 
+
+	The first Diamond Problem configuration is like this: Both B and C override the method m of A: 
+
+ 	class A:
+    	def m(self):
+        	print("m of A called")
+
+	class B(A):
+    	def m(self):
+        	print("m of B called")
+    
+	class C(A):
+    	def m(self):
+        	print("m of C called")
+
+	class D(B,C):
+    	pass
+ 	
+ 	
+ 		
+ 		 
+The widespread prejudice that multiple inheritance is something "dangerous" or "bad" is mostly nourished by 
+programming languages with poorly implemented multiple inheritance mechanisms and above all by improper usage of it. 
+Java doesn't even support multiple inheritance, while C++ supports it. Python has a sophisticated and well-designed 
+approach to multiple inheritance. 
+
+A class definition, where a child class SubClassName inherits from the parent classes BaseClass1, BaseClass2, BaseClass3, 
+and so on, looks like this: 
+
+class SubclassName(BaseClass1, BaseClass2, BaseClass3, ...):
+    pass
+
+
+super and MRO  ***************************************************
+
+	1.  previous implementation of the diamond problem
+		a. how Python "solves" the problem
+			- i.e. in which order the base classes are browsed through
+	2.  order is defined by the so-called "Method Resolution Order" 
+	    or in short MRO.1\
+	    a. extend our previous example, so every class defines its own method m: 
+		class A:
+    		def m(self):
+        		print("m of A called")
+
+			class B(A):
+			    def m(self):
+        			print("m of B called")
+    
+			class C(A):
+    			def m(self):
+        			print("m of C called")
+
+			class D(B,C):
+    			def m(self):
+        			print("m of D called")
+
+
+
+We will extend our previous example, so that every class defines its own method m: 

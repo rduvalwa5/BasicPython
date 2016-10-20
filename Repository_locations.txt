@@ -1,0 +1,33 @@
+03/18/2016
+
+Master Repository Location:
+rduvalwa2@c1246895-air:/Users/rduvalwa2/Workspace/GitRepos/Basic_Python.git
+
+
+
+
+C1246895-AIR: /Users/rduvalwa2/Workspace/Basic_Python/.git
+Working Directory: /Users/rduvalwa2/Eclipse_Workspace/Basic_Python
+drwxr-xr-x  6 rduvalwa2  staff  204 Mar 20 09:14 .metadata
+
+C1246895-OSX: /Users/rduvalwa2/C1246895-Air_Repos/Basic_Python/.git
+Working Directory: Same
+Exclipse Luna Directory: /Users/rduvalwa2/PythonWorkFrom_Air/Basic_Python
+drwxr-xr-x  6 rduvalwa2  staff  204 Mar 18 22:26 .metadata
+	-rw-r--r--  1 rduvalwa2  staff  99 Mar 18 22:26 version.ini
+		#Fri Mar 18 22:26:11 PDT 2016
+		org.eclipse.core.runtime=2
+		org.eclipse.platform=4.4.2.v20150204-1700
+
+C1246895-XPS:  /home/rduvalwa2/WorkGode/Basic_Python
+Working Directory:  /home/rduvalwa2/WorkGode/Basic_Python
+Exclipse Mars Directory: /home/rduvalwa2/workspace_eclipse/Basic_Python
+drwxrwxr-x 4 rduvalwa2 rduvalwa2 4096 Mar 20 16:00 .metadata
+drwxrwxr-x 2 rduvalwa2 rduvalwa2 4096 Mar 20 15:58 RemoteSystemsTempFiles
+
+March 27 2016
+C1246895.Centos.home: /home/rduvalwa2/repos/Basic_Python
+Working Directory:  /home/rduvalwa2/workspace/BasicPython
+[rduvalwa2@localhost BasicPython]$ ls
+RemoteSystemsTempFiles
+

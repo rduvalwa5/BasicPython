@@ -1,0 +1,7 @@
+http://www.w3schools.com/json/
+
+JSON Tutorial
+
+JSON: JavaScript Object Notation.
+		- syntax for storing and exchanging data.
+		- easier-to-use alternative to XML.

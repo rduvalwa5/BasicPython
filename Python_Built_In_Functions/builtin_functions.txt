@@ -1,0 +1,75 @@
+Built-in Functions
+
+The Python interpreter has a number of functions and types built into it that are always available. 
+They are listed here in alphabetical order.
+
+Function				File					Note		
+----------------------------------------------------------------------------
+abs()				miscelaneous.py
+all()				miscelaneous.py
+any()				miscelaneous.py
+ascii()				miscelaneous.py
+bin()				miscelaneous.py
+bool()				miscelaneous.py
+bytearray()			byte_examples.py
+bytes()				byte_examples.py
+callable()
+chr()				byte_examples.py
+classmethod()
+compile()
+complex() 
+delattr()			attr_magic.py
+dict()				class_basics
+dir()				class_basics
+divmod()
+enumerate()
+eval()
+exec()
+filter()
+float()
+format()
+frozenset()
+getattr()			attr_magic.py
+globals()
+hasattr()			attr_magic.py 
+hash()
+hex()
+id()
+input()
+int()
+isinstance()
+issubclass()
+iter()
+len()
+list()
+locals()
+map()
+max() 
+memoryview()
+min()
+next()
+object()
+oct()
+open()
+ord()				byte_examples.py
+pow()
+print()				all
+property()			propery_example.py
+range()				pyGenerator.py
+repr()
+reversed()			string_related.py
+round()	 
+set()
+setattr()			attr_magic.py
+slice()
+sorted()
+staticmethod()
+str()				string_related
+sum()
+super()
+tuple()
+type()				class_basics
+vars()				
+zip()
+__import__()
+

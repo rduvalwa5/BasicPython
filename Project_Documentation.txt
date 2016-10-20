@@ -1,0 +1,16 @@
+Project Objective:
+
+1) Create clear Python Examples
+2) Document examples
+
+Current content:
+
+1)  There are three approaches to using Python:
+	1) As a script, PytthonScriptExmaple.py
+	2) As a file with Python functions, PythonFunction.py
+	3) As a functions contained by a class, Python_class.py
+
+2)  Python Generators:
+	Generators functions allow you to declare a function that behaves like an iterator, i.e. it can be used in a for loop.
+	1) pyGenerator.py
+	

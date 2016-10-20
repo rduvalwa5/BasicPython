@@ -1,0 +1,62 @@
+Notes on Extending and Inheritance
+
+
+http://www.dummies.com/how-to/content/how-to-extend-classes-to-make-new-classes-in-pytho.html
+http://www.python-course.eu/python3_inheritance.php
+
+Inheritance:
+	1. object-oriented programming language
+	 	a) Python supports inheritance
+	 	b) supports multiple inheritance
+		c) classes inherit from other classes
+			- inherit attributes
+			- behaviour methods from another class
+			- called the superclass
+		d) class which inherits from a superclass is called a subclass
+			- also called heir class or child class
+		e) Superclasses are sometimes called ancestors as well
+			- exists a hierarchy relationship between classes
+		f) syntax for a subclass definition looks like this
+		
+			class DerivedClassName(BaseClassName):
+    				pass
+Example:
+    				
+class Person:
+
+    def __init__(self, first, last):
+        self.firstname = first
+        self.lastname = last
+
+    def Name(self):
+        return self.firstname + " " + self.lastname
+
+class Employee(Person):
+
+    def __init__(self, first, last, staffnum):
+        Person.__init__(self,first, last)
+        self.staffnumber = staffnum
+
+    def GetEmployee(self):
+        return self.Name() + ", " +  self.staffnumber
+
+x = Person("Marge", "Simpson")
+y = Employee("Homer", "Simpson", "1007")
+
+print(x.Name())
+print(y.GetEmployee())
+----------------------------
+
+	1)  __init__ method of our Employee class explicitly invokes the __init__method of the Person class
+		a. could have used super instead
+			- super().__init__(first, last) is automatically replaced by a call to the superclasses method
+			- in this case __init__:
+    			def __init__(self, first, last, staffnum):
+        					super().__init__(first, last)
+        					self.staffnumber = staffnum
+
+	2) note that used super()) without arguments
+	   This is only possible in Python3. 
+	   We could have written "super(Employee, self).__init__(first, last, age)" 
+	   which still works in Python3 and is compatible with Python2. 
+
