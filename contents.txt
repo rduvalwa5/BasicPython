@@ -1,0 +1,9 @@
+Contents of project:  10/22/2016
+C1246895-osx:BasicPython rduvalwa2$ ls
+Collections_List_src		Py_Extend_src			README.md			command_line			zip_src
+Dictionary_src			Py_Inheritance			RemoteSystemsTempFiles		string_src
+OS_IO_Examples			PythonCodeTypes			Repository_locations.txt	test.txt
+Project_Documentation.txt	Python_Built_In_Functions	Tupe_Src			underStandingIterators
+PyGen_src			Python_Test_Notes		UnitTest_Examples		w_r_json_src
+C1246895-osx:BasicPython rduvalwa2$ 
+
