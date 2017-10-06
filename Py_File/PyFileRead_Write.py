@@ -12,7 +12,7 @@ https://docs.python.org/3/library/sys.html#sys.getfilesystemencoding
 import sys, platform
 
 class file_functions():
-    def file_open(self, f,mode = ""):
+    def __init__(self, f,mode):
         '''
         open() returns a file object, and is most commonly used with two arguments: open(filename, mode).
         second argument string describing the way the file will be used
@@ -22,14 +22,34 @@ class file_functions():
          'r+' opens the file for both reading and writing
          mode argument is optional; 'r' will be assumed if it’s omitted.
         '''
-        return open(f,mode)
+        try:
+            self.filObj = open(f,mode)
+        except Exception as e:
+            print(e)
     
-    def read_file(self,file, mode):
-        print('read_file mode ',mode )
-        f = self.file_open(file, mode)
-        print(f.read())
+    def read_file(self):
+        print("function read_file")
+        print(self.filObj.read())
         
-  
+    def read_file_line(self):
+        print("function read_file_line")
+        print(self.filObj.readline())
+    
+    def read_file_lines(self,numberOfLines):
+        print("function read_file_lines")
+        n = 0
+        for line in self.filObj:
+            if n < numberOfLines:
+                print(n, line)
+                n = n + 1
+
+    def close_file(self):
+        self.filObj.close()
+        if self.filObj.closed:
+            print("File ",self.filObj.name," is closed")
+        else:
+            print("File ", self.filObj.name," is NOT closed")
+             
 class file_attributes():
     def __init__(self, filee, mode):
         try:
@@ -106,16 +126,19 @@ class file_attributes():
 if __name__ == '__main__':
     f = './testFile.txt'
     fx = './testFile2.txt'
-    ff = file_functions()
+    ff = file_functions(fx,'r')
     fa = file_attributes(f,'w+')
     NoFile = file_attributes('noExist.txt','r')
     BadMode = file_attributes(fx,'X')
-    f1 =  ff.file_open(f,'r')
-    f2 =  ff.file_open(fx,'r')
-#    print("file no for ", f, " is " ,f1.fileno())
-#    print("file no for ", fx, " is " ,f2.fileno())
-    ff.read_file(f, 'r')
-#    ff.read_file(fx,'r+')
+    ff.read_file()
+    ff.close_file()
+    ff2 = file_functions(fx,'r')
+    ff2.read_file_line()
+    ff2.close_file()
+    ff3 = file_functions(fx,'r')
+    ff3.read_file_lines(2)
+    ff3.close_file()
+    
     print(fa.get_file_mode())
     print(fa.get_file_name())
     print(fa.get_file_encoding())
