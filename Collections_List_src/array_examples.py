@@ -66,7 +66,7 @@ if __name__ == '__main__':
     aray = aa.createArray(myType, myList)
     print(aray)
 
-    myList = ['a','b','c',1]
+    myList = ['a','b','c','1']
     print(aa.createArray(myType, myList))
     
   
