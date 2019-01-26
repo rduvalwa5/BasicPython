@@ -12,9 +12,9 @@ lazy fox hound."
 
 print(testString)
 
-print(re.match(r'^>The',testString))
+print(re.match(r'^>The', testString))
 #  re.compile(r'^>([^\n\r]+)[\n\r]([A-Z\n\r]+)', re.MULTILINE
-print(re.match('jumped',testString))
+print(re.match('jumped', testString))
 
-mtch = re.match('^lazy',testString)
+mtch = re.match('^lazy', testString)
 print(mtch)

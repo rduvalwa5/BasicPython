@@ -22,21 +22,21 @@ so programs that use only a few regular expressions at a time needn’t worry ab
 
 str = "This is a long string for using a regular expression against.  This is  a shorter string for same purpose."
 
-mtch = re.match(r'(.*).',str)
+mtch = re.match(r'(.*).', str)
 print(mtch)
 
-mtch = re.match(r'(.*)a',str)
+mtch = re.match(r'(.*)a', str)
 print(mtch)
 
-matchObj = re.match( r'(.*)long', str, re.M)
-print("m1 ",matchObj)
+matchObj = re.match(r'(.*)long', str, re.M)
+print("m1 ", matchObj)
 
 matchObj2 = re.match('(.*)long', str)
-print("m2  ",matchObj2.group())
-print("m2 0",matchObj2.group(0))
-print("m2 1",matchObj2.group(1))
+print("m2  ", matchObj2.group())
+print("m2 0", matchObj2.group(0))
+print("m2 1", matchObj2.group(1))
 
 matchObj3 = re.match('(.*)purpose', str)
-print("m3  ",matchObj3.group())
-print("m3 0",matchObj3.group(0))
-print("m3 1",matchObj3.group(1))
+print("m3  ", matchObj3.group())
+print("m3 0", matchObj3.group(0))
+print("m3 1", matchObj3.group(1))
