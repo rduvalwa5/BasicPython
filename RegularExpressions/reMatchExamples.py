@@ -33,13 +33,24 @@ mtch = re.match(r'(.*)[a-z]', testString)
 print("[a-z]  ",mtch)
 
 mtch = re.match(r'(.*)[1-9]', testString)
-print("[1-9]  ",mtch)
+print("none [1-9]  ",mtch)
 
-numString = "abcde gjkwpjf 2345"
+numString = "abcde gjkwpjf \
+2345"\
 
 mtch = re.match(r'(.*)[1-9]', numString)
 print("[1-9]  ",mtch)
 
 emStr = 'red1dog@reD.com'
+print("emStr", emStr)
 mtch = re.match(r'(.*)[a-z,A-Z]',emStr)
-print(mtch)
+print("emStr1",mtch)
+mtch = re.match(r'(.*)[a-z,A-Z,0-9]@[a-z,A-Z,0-9](.*)[com]',emStr)
+print("emStr2",mtch)
+
+emStr2 = 'red1dog@reD.gov'
+print("emStr2", emStr2)
+mtch = re.match(r'(.*)[a-z,A-Z]',emStr2)
+print("emStr21",mtch)
+mtch = re.match(r'(.*)[a-z,A-Z,0-9]@[a-z,A-Z,0-9](.*)[a-z(3)]',emStr2)
+print("emStr22",mtch)
