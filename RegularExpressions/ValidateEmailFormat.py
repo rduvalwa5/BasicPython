@@ -11,11 +11,13 @@ class verifyEmailFormat:
     
         def __init__(self,em):
             self.eAddress = em
-#            print(self.eAddress)
+            print(self.eAddress)
             
         def verifyAt(self):
             if "@" in self.eAddress:
                 return True
+            else:
+                return False
                 
         def verifyDomain(self):
             result = False
@@ -28,17 +30,30 @@ class verifyEmailFormat:
                     print("email is ", self.eAddress)
                     result = True
             return result
-                
-        
+                       
         def verfiyLocalName(self):
             splitE = self.eAddress.split('@')
             print("split is ",splitE)
             print("local lenth is ", len(splitE[0]))
+            if len(splitE[0]) < 65:
+                return True
+            else:
+                return False
+            
+        def verifyFormat(self):
+            result = False
+            allResults = [self.verfiyLocalName(), self.verifyDomain(), self.verifyAt()]
+            print(allResults)
+            if False not in allResults:
+                return True
+            
+            
                 
 if __name__ == "__main__":
     import unittest
     
     class TestVerifyEmailFormat(unittest.TestCase):
+
         def setUp(self):
             self.eMail = "reddog@gamil.com"
             self.vEm = verifyEmailFormat(self.eMail)
@@ -60,8 +75,15 @@ if __name__ == "__main__":
             self.assertFalse(v.verifyDomain())
 
         def testLocal(self):
-            eMail = "reddog@gamil.moc"
+            #  v = verifyEmailFormat(eMail)
+            self.assertTrue(self.vEm.verfiyLocalName())
+            
+        def testVerifyFormatPass(self):
+            self.assertTrue(self.vEm.verifyFormat())
+                      
+        def testVerifyFormatFail(self):
+            eMail = "reddoggamil.com"
             v = verifyEmailFormat(eMail)
-            v.verfiyLocalName()
+            self.assertFalse(v.verifyFormat())
     
     unittest.main()
