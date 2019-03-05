@@ -58,11 +58,13 @@ if __name__ == "__main__":
 
     thisEnv =  os_env()
     print(thisEnv,'\n')
-    print(thisEnv['PWD'])
-    print(thisEnv['_'])
-    print(thisEnv['HOME'])
-    print(thisEnv['JAVA_HOME'])
-    print(thisEnv['LOGNAME']) 
+    print("Tbis os is ",get_os_name())
+    if os.name != 'nt':
+        print(thisEnv['PWD'])
+        print(thisEnv['_'])
+        print(thisEnv['HOME'])
+        print(thisEnv['JAVA_HOME'])
+        print(thisEnv['LOGNAME']) 
     print("Should be posix ", get_os_name())
     print("CPU count ", get_cpu_count())
     print("Current directory", get_cur_dir(), "\n")
