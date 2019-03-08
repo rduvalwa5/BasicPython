@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     thisEnv =  os_env()
     print(thisEnv,'\n')
-    print("Tbis os is ",get_os_name())
+    print("This os is ",get_os_name())
     if os.name != 'nt':
         print(thisEnv['PWD'])
         print(thisEnv['_'])
